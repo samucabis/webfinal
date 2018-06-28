@@ -1,0 +1,64 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="/produto/salvar" th:object="${produto}">
+
+<input type="hidden" th:field="*{id}">
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_model">Modelo</label>  
+  <div class="col-md-4">
+  <input id="product_model" name="modelo" placeholder="Modelo do Produto" class="form-control input-md" required type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nome">Nome do produto</label>  
+  <div class="col-md-4">
+  <input id="product_name" name="nome" placeholder="Nome do Produto" class="form-control input-md" required type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="available_quantity">Quantidade</label>  
+  <div class="col-md-4">
+  <input id="available_quantity" name="quantidade" placeholder="Quantidade" class="form-control input-md" required type="number">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_valor">Valor</label>  
+  <div class="col-md-4">
+  <input id="product_weight" name="valor" placeholder="Valor do produto" class="form-control input-md" required type="number">
+    
+  </div>
+</div>
+
+ <!-- File Button - -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">Imagem</label>
+  <div class="col-md-4">
+    <input id="filebutton" name="imagem" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Salvar</label>
+  <div class="col-md-4">
+    <input id="singlebutton"  class="btn btn-primary" type="submit" value="Salvar">
+    
+  </div>
+  </div>
+</form>
+<a href="/" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Voltar</a>
+

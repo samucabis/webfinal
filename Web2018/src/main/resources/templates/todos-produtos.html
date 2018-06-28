@@ -1,0 +1,43 @@
+<link href="/css/maxcdnboot.css" rel="stylesheet"  id="bootstrap-css">
+<script src="/js/maxcdnboot.js"></script>
+<link href="/css/listar.css" type="text/css" rel="stylesheet">
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row">
+        <h2>Todos os produtos</h2>
+        <p>
+            Para Voltar <a href="/" target="_blank">Clique aqui</a>.
+        </p>
+
+        <div class="col-sm-3" th:each="produto : ${todasOsProdutos}">
+        	<article class="col-item">
+        		<div class="photo">
+        			<a th:href="@{/produto/produtoShow/{id}(id = ${produto.id})}"> <img th:src="@{'/images/'+${produto.nome}+.png}" class="img-responsive" alt="Product Image" /> </a>
+        		</div>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details" th:text="${produto.descricao}">
+        					</p>
+        					<h1 th:text="${produto.nome}"></h1>
+        					<span class="price-new" th:text="${produto.valor}"></span>
+        				</div>
+        			</div>
+        			<div class="separator clear-left">
+        				<p class="btn-add">
+        					<i class="fa fa-shopping-cart"></i><a th:href="@{/produto/addcart/{id}(id = ${produto.id})}" class="hidden-sm">Carrinho</a>
+        				</p>
+        				<p class="btn-details">
+        					<a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Add to wish list"><i class="fa fa-heart"></i></a>
+        					<a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Compare"><i class="fa fa-exchange"></i></a>
+        				</p>
+        			</div>
+        			<div class="clearfix"></div>
+        		</div>
+        	</article>
+        </div>
+	</div>
+</div>
